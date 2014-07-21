@@ -24,7 +24,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
         });
 
     $urlRouterProvider.otherwise('/form/pdata');
-})
+});
 
 app.controller('formController', function($scope) {
     $scope.formData = {};
