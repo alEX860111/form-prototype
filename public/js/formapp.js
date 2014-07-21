@@ -1,10 +1,5 @@
-
-// create our angular app and inject ngAnimate and ui-router 
-// =============================================================================
 angular.module('formApp', ['ui.router'])
 
-// configuring our routes 
-// =============================================================================
 .config(function($stateProvider, $urlRouterProvider) {
     
     $stateProvider
@@ -18,37 +13,32 @@ angular.module('formApp', ['ui.router'])
         
         // nested states 
         // each of these sections will have their own view
-        // url will be nested (/form/profile)
-        .state('form.profile', {
-            url: '/profile',
-            templateUrl: 'form-profile.html'
+        // url will be nested (/form/pdata)
+        .state('form.pdata', {
+            url: '/pdata',
+            templateUrl: 'form-pdata.html'
         })
         
-        // url will be /form/interests
-        .state('form.interests', {
-            url: '/interests',
-            templateUrl: 'form-interests.html'
+        // url will be /form/advanced
+        .state('form.advanced', {
+            url: '/advanced',
+            templateUrl: 'form-advanced.html'
         })
         
-        // url will be /form/payment
-        .state('form.payment', {
-            url: '/payment',
-            templateUrl: 'form-payment.html'
+        // url will be /form/confirm
+        .state('form.confirm', {
+            url: '/confirm',
+            templateUrl: 'form-confirm.html'
         });
        
     // catch all route
     // send users to the form page 
-    $urlRouterProvider.otherwise('/form/profile');
+    $urlRouterProvider.otherwise('/form/pdata');
 })
 
-// our controller for the form
-// =============================================================================
 .controller('formController', function($scope) {
-    
-    // we will store all of our form data in this object
     $scope.formData = {};
-    
-    // function to process the form
+
     $scope.processForm = function() {
         alert('awesome!');  
     };
