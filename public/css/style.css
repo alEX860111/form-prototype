@@ -4,3 +4,35 @@
 .ng-valid.ng-dirty {
   border-color:green;
 }
+
+/* numbered buttons */
+#status-buttons {
+
+}
+#status-buttons span {
+  color:#FFF; 
+}
+#status-buttons a { 
+	display:inline-block; 
+	font-size:12px; 
+	margin-right:10px; 
+	text-align:center; 
+	text-transform:uppercase;
+}
+#status-buttons a:hover { 
+  text-decoration:none;
+}
+#status-buttons span {
+  background:#080808;
+  display:block; 
+  height:30px; 
+  margin:0 
+  auto 10px; 
+  padding-top:5px; 
+  width:30px; 
+  border-radius:50%; 
+}
+
+#status-buttons a.active span {
+  background:#5bc0de;
+}
