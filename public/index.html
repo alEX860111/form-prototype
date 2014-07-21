@@ -1,0 +1,25 @@
+<html ng-app='myapp'>
+
+<head>
+	<style>
+	  .ng-invalid.ng-dirty {
+	  	border-color:red;
+	  }
+	  .ng-valid.ng-dirty {
+	  	border-color:green;
+	  }
+	</style>
+    <script src='bower_components/angular/angular.js'></script>
+    <script src='js/controllers.js'></script>
+</head>
+
+<body>
+	<form name='personaldata' ng-controller='formcontroller as formCtrl' ng-submit='personaldata.$valid && formCtrl.submitForm()' novalidate>
+		<label>email</label><input type='email' required ng-model='formCtrl.data.email' />
+	    </br>
+		<input type='submit' value='submit' />
+	    <p>{{formCtrl.data}}</p>
+	</form>
+</body>
+
+</html>

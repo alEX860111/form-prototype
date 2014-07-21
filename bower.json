@@ -1,0 +1,12 @@
+{
+  "name": "test",
+  "description": "test project",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "angular": "1.2.x",
+    "angular-mocks": "~1.2.x",
+    "angular-ui-router": "0.2.10",
+    "bootstrap": "3.2.0"
+  }
+}
