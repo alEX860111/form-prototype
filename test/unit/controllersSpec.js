@@ -1,15 +1,15 @@
-describe('formcontroller', function() {
+describe('formController', function() {
 
     beforeEach(function() {
-        module('myapp');
+        module('formApp');
         scope = {};
     });
 
-    it('should do something', inject(function($controller) {
-        var ctrl = $controller('formcontroller', {
+    it('should provide a function to process the submitted data', inject(function($controller) {
+        var ctrl = $controller('formController', {
             $scope: scope
         });
-        expect(ctrl.submitForm).toBeDefined();
+        expect(scope.processForm).toBeDefined();
     }));
 
 });
