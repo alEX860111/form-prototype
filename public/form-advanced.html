@@ -2,13 +2,13 @@
 <div class="form-group">
     <div class="radio">
         <label>
-           <input type="radio" ng-model="formData.regularIncome" value="true" checked>
+           <input type="radio" ng-model="formData.regularIncome" ng-value="true" checked required>
            Yes
         </label>
     </div>
     <div class="radio">
         <label>
-            <input type="radio" ng-model="formData.regularIncome" value="false">
+            <input type="radio" ng-model="formData.regularIncome" ng-value="false">
             No
         </label>
     </div>
@@ -16,7 +16,7 @@
 
 <div class="form-group row">
 <div class="col-xs-6 col-xs-offset-3">
-    <a ui-sref="form.confirm" class="btn btn-block btn-info">
+    <a ui-sref="form.confirm" class="btn btn-block btn-info" ng-disabled='form.$invalid'>
     Step 3 <span class="glyphicon glyphicon-circle-arrow-right"></span>
     </a>
 </div>
