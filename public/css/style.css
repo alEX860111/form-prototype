@@ -4,6 +4,9 @@
 .ng-valid.ng-dirty {
   border-color:green;
 }
+.glyphicon-ok {
+  color:green;
+}
 
 /* numbered buttons */
 #status-buttons {
