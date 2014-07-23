@@ -6,6 +6,10 @@
   border-color:green;
 }
 
+.invalid {
+  color:red;
+}
+
 /* styling of bootstrap icons */
 .glyphicon-ok {
   color:green;

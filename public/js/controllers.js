@@ -10,7 +10,14 @@ app.controller('formController', function($scope) {
 
   $scope.$on("$stateChangeStart", function(event, toState, toParams, fromState, fromParams) {
   	if (toState.step > fromState.step && $scope.form.$invalid) {
-      alert('your form is invalid');
+      for (field in $scope.form) {
+             if (field.charAt(0) != '$' && $scope.form[field].$pristine) {
+                  $scope.form[field].$setViewValue(
+                      $scope.form[field].$modelValue
+                  );
+             }
+             
+      }   
       event.preventDefault();
   	}
   });
