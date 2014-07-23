@@ -1,13 +1,20 @@
-var app = angular.module('controllers', []);
+var app = angular.module('controllers', ['ui.bootstrap']);
 
 app.controller('formController', function($scope) {
-    $scope.formData = {};
+  $scope.formData = {};
 
-    $scope.processForm = function() {
-        alert('You just submitted: \n\n' + JSON.stringify($scope.formData));
-        $scope.formData = {};
-    };
-    
+  $scope.processForm = function() {
+    alert('You just submitted: \n\n' + JSON.stringify($scope.formData));
+    $scope.formData = {};
+  };
+
+  $scope.$on("$stateChangeStart", function(event, toState, toParams, fromState, fromParams) {
+  	if (toState.step > fromState.step && $scope.form.$invalid) {
+      alert('your form is invalid');
+      event.preventDefault();
+  	}
+  });
+
 });
 
 app.controller('dateController', function ($scope) {
