@@ -1,4 +1,4 @@
-var app = angular.module('formApp', ['ui.router']);
+var app = angular.module('formApp', ['controllers', 'ui.router', 'ui.bootstrap']);
 
 app.config(function($stateProvider, $urlRouterProvider) {
     $stateProvider
@@ -24,14 +24,4 @@ app.config(function($stateProvider, $urlRouterProvider) {
         });
 
     $urlRouterProvider.otherwise('/form/pdata');
-});
-
-app.controller('formController', function($scope) {
-    $scope.formData = {};
-
-    $scope.processForm = function() {
-        alert('You just submitted: \n\n' + JSON.stringify($scope.formData));
-        $scope.formData = {};
-    };
-    
 });

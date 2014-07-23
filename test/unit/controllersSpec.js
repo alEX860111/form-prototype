@@ -1,7 +1,7 @@
 describe('formController', function() {
 
     beforeEach(function() {
-        module('formApp');
+        module('controllers');
         scope = {};
     });
 

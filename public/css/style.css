@@ -1,20 +1,23 @@
+/* styling of the ng classes */
 .ng-invalid.ng-dirty {
   border-color:red;
 }
 .ng-valid.ng-dirty {
   border-color:green;
 }
+
+/* styling of bootstrap icons */
 .glyphicon-ok {
   color:green;
 }
 .glyphicon-remove {
   color:red;
 }
-
-/* numbered buttons */
-#status-buttons {
-
+.datefeedback {
+  margin-right: 45px;
 }
+
+/* styling of the numbered buttons */
 #status-buttons span {
   color:#FFF; 
 }
@@ -38,7 +41,6 @@
   width:30px; 
   border-radius:50%; 
 }
-
 #status-buttons a.active span {
   background:#5bc0de;
 }
