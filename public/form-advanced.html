@@ -1,14 +1,16 @@
 <label>Do you have a regular income?</label>
 <div class="form-group">
-  <div class="radio">
-    <label>
-      <input name='income' type="radio" ng-model="formData.regularIncome" ng-value="true" ng-required='true'>Yes
-    </label>
-  </div>
-  <div class="radio">
-    <label>
-      <input name='income' type="radio" ng-model="formData.regularIncome" ng-value="false" ng-required='true'>No
-    </label>
+  <div ng-class="{'invalid-border': form.income.$invalid && form.income.$dirty}">
+    <div class="radio">
+      <label>
+        <input name='income' type="radio" ng-model="formData.regularIncome" ng-value="true" ng-required='true'>Yes
+      </label>
+    </div>
+    <div class="radio">
+      <label>
+        <input name='income' type="radio" ng-model="formData.regularIncome" ng-value="false" ng-required='true'>No
+      </label>
+    </div>
   </div>
   <div class='invalid' ng-show="form.income.$invalid && form.income.$dirty">Please tell us if you have a regular income.</div>
 </div>

@@ -10,6 +10,10 @@
 .invalid {
   color:red;
 }
+.invalid-border {
+  border: 1px solid red;
+  border-radius: 4px;
+}
 .datefeedback {
   margin-right: 45px;
 }
