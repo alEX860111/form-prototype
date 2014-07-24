@@ -9,26 +9,23 @@ app.controller('formController', function($scope) {
   };
 
   $scope.$on("$stateChangeStart", function(event, toState, toParams, fromState, fromParams) {
-  	if (toState.step > fromState.step && $scope.form.$invalid) {
-      for (field in $scope.form) {
-             if (field.charAt(0) != '$' && $scope.form[field].$pristine) {
-                  $scope.form[field].$setViewValue(
-                      $scope.form[field].$modelValue
-                  );
-             }
-             
+    if (toState.step > fromState.step && $scope.form.$invalid) {
+      for (input in $scope.form) {
+        if (input.charAt(0) != '$' && $scope.form[input].$pristine) {
+          $scope.form[input].$setViewValue($scope.form[input].$modelValue);
+        }
       }   
       event.preventDefault();
-  	}
+    }
   });
 
 });
 
 app.controller('dateController', function ($scope) {
   $scope.dateOptions = {
-  	'datepicker-mode': 'month',
-  	'show-weeks': false,
-  	'year-range': 20
+    'datepicker-mode': 'month',
+    'show-weeks': false,
+    'year-range': 20
   };
   $scope.open = function($event) {
     $event.preventDefault();
