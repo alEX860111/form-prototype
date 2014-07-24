@@ -6,8 +6,12 @@
   border-color:green;
 }
 
+/* own classes */
 .invalid {
   color:red;
+}
+.datefeedback {
+  margin-right: 45px;
 }
 
 /* styling of bootstrap icons */
@@ -17,20 +21,17 @@
 .glyphicon-remove {
   color:red;
 }
-.datefeedback {
-  margin-right: 45px;
-}
 
 /* styling of the numbered buttons */
 #status-buttons span {
   color:#FFF; 
 }
 #status-buttons a { 
-	display:inline-block; 
-	font-size:12px; 
-	margin-right:10px; 
-	text-align:center; 
-	text-transform:uppercase;
+  display:inline-block; 
+  font-size:12px; 
+  margin-right:10px; 
+  text-align:center; 
+  text-transform:uppercase;
 }
 #status-buttons a:hover { 
   text-decoration:none;
