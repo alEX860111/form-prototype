@@ -1,6 +1,12 @@
 /* styling of the ng classes */
+.ng-invalid.ng-touched {
+  border-color:red;
+}
 .ng-invalid.ng-dirty {
   border-color:red;
+}
+.ng-valid.ng-touched {
+  border-color:green;
 }
 .ng-valid.ng-dirty {
   border-color:green;
