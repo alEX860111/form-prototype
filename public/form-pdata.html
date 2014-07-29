@@ -1,7 +1,7 @@
 <div class="form-group has-feedback">
   <label for="name">Name</label>
   <input name="name" type="text" class="form-control" ng-model="formData.name" ng-required="true" ng-model-options="{ updateOn: 'blur' }">
-  <span class="glyphicon form-control-feedback" ng-class="{'glyphicon-ok':form.name.$valid && form.name.$dirty, 'glyphicon-remove':form.name.$invalid}" ng-show='form.name.$touched'></span>
+  <span class="glyphicon form-control-feedback" ng-class="{'glyphicon-ok':form.name.$valid, 'glyphicon-remove':form.name.$invalid}" ng-show='form.name.$touched'></span>
   <div class='invalid' ng-show="form.name.$touched && form.name.$invalid">
     <span ng-show="form.name.$error.required">Please tell us your name.</span>
   </div>
@@ -26,7 +26,7 @@
       <button type="button" class="btn btn-default" ng-click="open($event)">&nbsp;<i class="glyphicon glyphicon-calendar"></i>&nbsp;</button>
     </span>
   </div>
-  <span class="glyphicon form-control-feedback datefeedback" ng-class="{'glyphicon-ok':form.date.$valid, 'glyphicon-remove':form.date.$invalid}" ng-show='form.date.$touched'></span>
+  <span class="glyphicon form-control-feedback datefeedback" ng-class="{'glyphicon-ok':form.date.$valid, 'glyphicon-remove':form.date.$invalid}" ng-show='form.date.$dirty'></span>
   <div class='invalid' ng-show="form.date.$touched && form.date.$invalid">
     <span ng-show="form.date.$error.required && !form.date.$error.date">Please tell us your birthdate.</span>
     <span ng-show="form.date.$error.date">This is not a valid date.</span>
