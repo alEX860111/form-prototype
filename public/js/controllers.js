@@ -9,7 +9,8 @@ app.controller('formController', function($scope) {
   };
 
   $scope.$on("$stateChangeStart", function(event, toState, toParams, fromState, fromParams) {
-    console.dir($scope.form);
+    console.log(toState.step);
+    console.log(fromState.step);
     if (toState.step > fromState.step && $scope.form.$invalid) {
       for (input in $scope.form) {
         if (input.charAt(0) != '$' && $scope.form[input].$pristine) {
@@ -19,7 +20,6 @@ app.controller('formController', function($scope) {
         }
       }   
       event.preventDefault();
-      console.dir($scope.form);
     }
   });
 
