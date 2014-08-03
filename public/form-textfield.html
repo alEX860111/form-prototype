@@ -1,0 +1,8 @@
+<div class="form-group has-feedback">
+  <label for="{{datafield}}">{{label}}</label>
+  <input name="{{datafield}}" type="text" class="form-control" ng-model="ngModel" ng-required="true" ng-model-options="{ updateOn: 'blur' }">
+  <span class="glyphicon form-control-feedback" ng-class="{'glyphicon-ok':form.datafield.$valid, 'glyphicon-remove':form.datafield.$invalid}" ng-show='form.datafield.$touched'></span>
+  <div class='invalid' ng-show="form.datafield.$touched && form.datafield.$invalid">
+    <span ng-show="form.datafield.$error.required">Please tell us your {{label}}.</span>
+  </div>
+</div>

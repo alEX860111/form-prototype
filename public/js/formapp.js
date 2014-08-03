@@ -1,4 +1,4 @@
-var app = angular.module('formApp', ['controllers', 'ui.router']);
+var app = angular.module('formApp', ['controllers', 'directives', 'ui.router']);
 
 app.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
