@@ -1,4 +1,4 @@
-var app = angular.module('directives', []);
+var app = angular.module('directives', ['ui.bootstrap']);
 
 app.directive('interpolForm', function($interpolate) {
   return {
@@ -32,6 +32,31 @@ app.directive('customTextfield', function() {
       type: '@type',
       name: '@name',
       label: '@label'
+    }
+  };
+});
+
+app.directive('customDatefield', function() {
+  return {
+    restrict: 'A',
+    templateUrl: 'form-datefield.html',
+    scope: {
+      form: '=form',
+      data: '=data',
+      name: '@name',
+      label: '@label'
+    },
+    controller: function($scope) {
+      $scope.dateOptions = {
+        'datepicker-mode': 'month',
+        'show-weeks': false,
+        'year-range': 20
+      };
+      $scope.open = function($event) {
+        $event.preventDefault();
+        $event.stopPropagation();
+        $scope.opened = true;
+      };
     }
   };
 });
