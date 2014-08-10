@@ -10,12 +10,17 @@
         </div>
     </div>
 
-    <form name="form" ng-submit="processForm()" novalidate>
+    <form ng-submit="processForm()" interpol-form="{{'form'}}" novalidate>
         <div id="form-views" ui-view></div>
     </form>
 
     <pre>
-      {{ formData }}
+      formData: {{ formData }}
+      form:
+      pristine: {{form.$pristine}}
+      dirty: {{form.$dirty}}
+      valid: {{form.$valid}}
+      invalid: {{form.$invalid}}
     </pre>
 
   </div>

@@ -1,25 +1,11 @@
-<div class="form-group has-feedback">
-  <label for="name">Name</label>
-  <input name="name" type="text" class="form-control" ng-model="formData.name" ng-required="true" ng-model-options="{ updateOn: 'blur' }">
-  <span class="glyphicon form-control-feedback" ng-class="{'glyphicon-ok':form.name.$valid, 'glyphicon-remove':form.name.$invalid}" ng-show='form.name.$touched'></span>
-  <div class='invalid' ng-show="form.name.$touched && form.name.$invalid">
-    <span ng-show="form.name.$error.required">Please tell us your name.</span>
-  </div>
-</div>
+<div custom-textfield form="form" data="formData" type="text" name="testName" label="Name"></div>
 
-<div textfield label='this is a test' ng-model="formData.test" datafield="test"></div>
+<div custom-textfield form="form" data="formData" type="text" name="testName2" label="Bla"></div>
 
-<div class="form-group has-feedback">
-  <label for="email">Email</label>
-  <input name="email" type="email" class="form-control" ng-model="formData.email" ng-required="true" ng-model-options="{ updateOn: 'blur' }">
-  <span class="glyphicon form-control-feedback" ng-class="{'glyphicon-ok':form.email.$valid, 'glyphicon-remove':form.email.$invalid}" ng-show='form.email.$touched'></span>
-  <div class='invalid' ng-show="form.email.$touched && form.email.$invalid">
-    <span ng-show="form.email.$error.required">Please tell us your email.</span>
-    <span ng-show="form.email.$error.email">This is not a valid email.</span>
-  </div>
-</div>
+<div custom-textfield form="form" data="formData" type="email" name="email" label="Email"></div>
 
-<div class="form-group has-feedback" ng-controller='dateController'>
+
+<!-- <div class="form-group has-feedback" ng-controller='dateController'>
   <label for="date">Birthdate</label>
   <div class='input-group'>
     <input name='date' type="text" class="form-control" ng-model="$parent.formData.birthdate" ng-required="true" datepicker-popup="dd-MMMM-yyyy" datepicker-options="dateOptions" 
@@ -34,7 +20,7 @@
     <span ng-show="form.date.$error.date">This is not a valid date.</span>
   </div>
 
-</div>
+</div> -->
 
 <div class="form-group row">
   <div class="col-xs-6 col-xs-offset-3">

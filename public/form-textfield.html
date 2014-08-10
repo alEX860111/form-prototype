@@ -1,8 +1,20 @@
 <div class="form-group has-feedback">
-  <label for="{{datafield}}">{{label}}</label>
-  <input name="{{datafield}}" type="text" class="form-control" ng-model="ngModel" ng-required="true" ng-model-options="{ updateOn: 'blur' }">
-  <span class="glyphicon form-control-feedback" ng-class="{'glyphicon-ok':form.datafield.$valid, 'glyphicon-remove':form.datafield.$invalid}" ng-show='form.datafield.$touched'></span>
-  <div class='invalid' ng-show="form.datafield.$touched && form.datafield.$invalid">
-    <span ng-show="form.datafield.$error.required">Please tell us your {{label}}.</span>
+  <label for="{{name}}">{{label}}</label>
+  <input type="{{type}}" class="form-control" interpol-model="{{name}}" ng-model="data[name]" ng-required="true" ng-model-options="{ updateOn: 'blur' }" />
+  <span class="glyphicon form-control-feedback" ng-class="{'glyphicon-ok':form[name].$valid, 'glyphicon-remove':form[name].$invalid}" ng-show='form[name].$touched'></span>
+  <div class='invalid' ng-show="form[name].$touched && form[name].$invalid">
+    <span ng-show="form[name].$error.required">Please tell us your {{label}}.</span>
+    <span ng-show="form[name].$error.email">This is not a valid email.</span>
   </div>
 </div>
+
+<pre>
+  form.{{name}}:
+  value: {{form[name].$modelValue}}
+  pristine: {{form[name].$pristine}}
+  dirty: {{form[name].$dirty}}
+  touched: {{form[name].$touched}}
+  untouched: {{form[name].$untouched}}
+  valid: {{form[name].$valid}}
+  invalid: {{form[name].$invalid}}
+</pre>
