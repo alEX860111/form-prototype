@@ -11,5 +11,6 @@
     <span ng-show="form[name].$error.required && !form[name].$error.date">Please tell us your {{label}}.</span>
     <span ng-show="form[name].$error.date">This is not a valid date.</span>
   </div>
-
 </div>
+
+<div custom-inputpreview form="form" name="{{name}}"></div>

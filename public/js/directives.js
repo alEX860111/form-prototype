@@ -60,3 +60,14 @@ app.directive('customDatefield', function() {
     }
   };
 });
+
+app.directive('customInputpreview', function() {
+  return {
+    restrict: 'A',
+    templateUrl: 'form-inputpreview.html',
+    scope: {
+      form: '=form',
+      name: '@name'
+    }
+  };
+});
