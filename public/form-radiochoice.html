@@ -1,0 +1,19 @@
+<div class="form-group has-feedback">
+  <label for="{{name}}">{{label}}</label>
+  <div class="radio form-control income-border"
+  ng-class="{'invalid-border': form[name].$dirty && form.$invalid, 'valid-border': form[name].$dirty && form.$valid}">
+    <label>
+      <input name='{{name}}' type="radio" interpol-model="{{name}}" ng-model="data[name]" ng-value="true" ng-required='true'>Yes
+    </label>
+    <label>
+      <input name='{{name}}' type="radio" interpol-model="{{name}}" ng-model="data[name]" ng-value="false" ng-required='true'>No
+    </label>
+  </div>
+  <span class="glyphicon form-control-feedback" ng-class="{'glyphicon-ok': form.$valid, 'glyphicon-remove': form.$invalid}"
+  ng-show='form[name].$dirty'></span>
+  <div class='invalid' ng-show="form[name].$error.required && form[name].$dirty">
+    Please tell give us some input here.
+  </div>
+</div>
+
+<div custom-inputpreview form="form" name="{{name}}"></div>

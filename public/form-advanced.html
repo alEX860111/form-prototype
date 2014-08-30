@@ -1,17 +1,4 @@
-
-<div class="form-group has-feedback">
-  <label for="income">Do you have a regular income?</label>
-  <div class="radio form-control income-border" ng-class="{'invalid-border': (form.income1.$dirty || form.income2.$dirty) && form.$invalid, 'valid-border': (form.income1.$dirty || form.income2.$dirty) && form.$valid}">
-    <label>
-      <input name='income1' type="radio" ng-model="formData.regularIncome" ng-value="true" ng-required='true'>Yes
-    </label>
-    <label>
-      <input name='income2' type="radio" ng-model="formData.regularIncome" ng-value="false" ng-required='true'>No
-    </label>
-  </div>
-  <span class="glyphicon form-control-feedback" ng-class="{'glyphicon-ok': form.$valid, 'glyphicon-remove': form.$invalid}" ng-show='form.income1.$dirty || form.income2.$dirty'></span>
-  <div class='invalid' ng-show="(form.income1.$dirty || form.income2.$dirty) && form.$invalid">Please tell us if you have a regular income.</div>
-</div>
+<div custom-radiochoice form="form" data="formData" name="income" label="Do you have a regular income?"></div>
 
 <div class="form-group row">
   <div class="col-xs-6 col-xs-offset-3">

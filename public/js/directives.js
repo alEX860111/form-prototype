@@ -36,6 +36,19 @@ app.directive('customTextfield', function() {
   };
 });
 
+app.directive('customRadiochoice', function() {
+  return {
+    restrict: 'A',
+    templateUrl: 'form-radiochoice.html',
+    scope: {
+      form: '=form',
+      data: '=data',
+      name: '@name',
+      label: '@label'
+    }
+  };
+});
+
 app.directive('customDatefield', function() {
   return {
     restrict: 'A',
