@@ -49,6 +49,19 @@ app.directive('customRadiochoice', function() {
   };
 });
 
+app.directive('customCheckbox', function() {
+  return {
+    restrict: 'A',
+    templateUrl: 'form-checkbox.html',
+    scope: {
+      form: '=form',
+      data: '=data',
+      name: '@name',
+      label: '@label'
+    }
+  };
+});
+
 app.directive('customDatefield', function() {
   return {
     restrict: 'A',
