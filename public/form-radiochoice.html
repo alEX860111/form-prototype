@@ -1,19 +1,22 @@
 <div class="form-group has-feedback">
   <label for="{{name}}">{{label}}</label>
   <div class="radio form-control income-border"
-  ng-class="{'invalid-border': form[name].$dirty && form.$invalid, 'valid-border': form[name].$dirty && form.$valid}">
+  ng-class="{'invalid-border': (form[name+1].$dirty || form[name+2].$dirty ) && form.$invalid, 'valid-border': (form[name+1].$dirty || form[name+2].$dirty ) && form.$valid}">
     <label>
-      <input name='{{name}}' type="radio" interpol-model="{{name}}" ng-model="data[name]" ng-value="true" ng-required='true'>Yes
+      <input type="radio" interpol-model="{{name}}1" ng-model="data[name]" ng-value="true" ng-required='true'>
+      Yes
     </label>
     <label>
-      <input name='{{name}}' type="radio" interpol-model="{{name}}" ng-model="data[name]" ng-value="false" ng-required='true'>No
+      <input type="radio" interpol-model="{{name}}2" ng-model="data[name]" ng-value="false" ng-required='true'>
+      No
     </label>
   </div>
-  <span class="glyphicon form-control-feedback" ng-class="{'glyphicon-ok': form.$valid, 'glyphicon-remove': form.$invalid}"
-  ng-show='form[name].$dirty'></span>
-  <div class='invalid' ng-show="form[name].$error.required && form[name].$dirty">
-    Please tell give us some input here.
+  <span class="glyphicon form-control-feedback"
+  ng-class="{'glyphicon-ok': form.$valid, 'glyphicon-remove': form.$invalid}" ng-show='(form[name+1].$dirty || form[name+2].$dirty )'></span>
+  <div class='invalid' ng-show="(form[name+1].$error.required || form[name+2].$error.required) && (form[name+1].$dirty || form[name+2].$dirty )">
+    Please give us some input here.
   </div>
 </div>
 
-<div custom-inputpreview form="form" name="{{name}}"></div>
+<div custom-inputpreview form="form" name="{{name}}1"></div>
+<div custom-inputpreview form="form" name="{{name}}2"></div>
