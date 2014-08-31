@@ -3,20 +3,22 @@
 
     <div class="page-header text-center">
       <h2>Form prototype</h2>
-        <div id="status-buttons" class="text-center">
-          <a ui-sref-active="active" ui-sref=".pdata"><span>1</span> Personal data</a>
-          <a ui-sref-active="active" ui-sref=".advanced"><span>2</span> Advanced data</a>
-          <a ui-sref-active="active" ui-sref=".confirm"><span>3</span> Confirm</a>
-        </div>
+      <div id="status-buttons" class="text-center">
+        <a ui-sref-active="active" ui-sref=".pdata">
+          <span>1</span>Personal data</a>
+        <a ui-sref-active="active" ui-sref=".advanced">
+          <span>2</span>Advanced data</a>
+        <a ui-sref-active="active" ui-sref=".confirm">
+          <span>3</span>Confirm</a>
+      </div>
     </div>
 
     <form ng-submit="processForm()" interpol-form="{{'form'}}" novalidate>
-        <div id="form-views" ui-view></div>
+      <div id="form-views" ui-view></div>
     </form>
 
     <pre ng-show="devIsEnabled">
       formData: {{ formData }}
-      form:
       pristine: {{form.$pristine}}
       dirty: {{form.$dirty}}
       valid: {{form.$valid}}
