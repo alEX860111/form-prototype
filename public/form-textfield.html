@@ -3,7 +3,7 @@
   <input type="{{type}}" class="form-control" interpol-model="{{name}}" ng-model="data[name]" ng-required="true" />
   <span class="glyphicon form-control-feedback"
   ng-class="{'glyphicon-ok':form[name].$valid, 'glyphicon-remove':form[name].$invalid}" ng-show='form[name].$dirty'></span>
-  <div class='invalid' ng-show="form[name].$dirty && form[name].$invalid">
+  <div class='invalid' ng-show="(form[name].$dirty || form[name].$touched) && form[name].$invalid">
     <span ng-show="form[name].$error.required">Please tell us your {{label}}.</span>
     <span ng-show="form[name].$error.email">This is not a valid email.</span>
   </div>
