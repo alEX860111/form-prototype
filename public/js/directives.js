@@ -44,7 +44,11 @@ app.directive('customRadiochoice', function() {
       form: '=form',
       data: '=data',
       name: '@name',
-      label: '@label'
+      label: '@label',
+      value1: '@value1',
+      value2: '@value2',
+      label1: '@label1',
+      label2: '@label2'
     }
   };
 });
