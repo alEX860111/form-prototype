@@ -14,7 +14,7 @@
         <div id="form-views" ui-view></div>
     </form>
 
-    <pre>
+    <pre ng-show="devIsEnabled">
       formData: {{ formData }}
       form:
       pristine: {{form.$pristine}}

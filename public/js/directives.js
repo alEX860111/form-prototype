@@ -94,6 +94,9 @@ app.directive('customInputpreview', function() {
     scope: {
       form: '=form',
       name: '@name'
+    },
+    controller: function($scope, Util) {
+      $scope.devIsEnabled = Util.isDevEnabled();
     }
   };
 });

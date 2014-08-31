@@ -6,7 +6,7 @@
       <button type="button" class="btn btn-default" ng-click="open($event)">&nbsp;<i class="glyphicon glyphicon-calendar"></i>&nbsp;</button>
     </span>
   </div>
-  <span class="glyphicon form-control-feedback datefeedback" ng-class="{'glyphicon-ok':form[name].$valid, 'glyphicon-remove':form[name].$invalid}" ng-show='form[name].$dirty'></span>
+  <span class="glyphicon form-control-feedback datefeedback" ng-class="{'glyphicon-ok':form[name].$valid, 'glyphicon-remove':form[name].$invalid}" ng-show='(form[name].$dirty || form[name].$touched)'></span>
   <div class='invalid' ng-show="(form[name].$dirty || form[name].$touched) && form[name].$invalid">
     <span ng-show="form[name].$error.required && !form[name].$error.date">Please tell us your {{label}}.</span>
     <span ng-show="form[name].$error.date">This is not a valid date.</span>

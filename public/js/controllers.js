@@ -1,12 +1,22 @@
 var app = angular.module('controllers', []);
 
-app.controller('formController', function($scope) {
+app.factory('Util', function($location) {
+    var util = {};
+    util.isDevEnabled = function() {
+        return $location.search()['dev'] === 'true';
+    };
+    return util;
+});
+
+app.controller('formController', function($scope, Util) {
   $scope.formData = {};
 
   $scope.processForm = function() {
     alert('You just submitted: \n\n' + JSON.stringify($scope.formData));
     $scope.formData = {};
   };
+
+  $scope.devIsEnabled = Util.isDevEnabled();
 
   $scope.$on("$stateChangeStart", function(event, toState, toParams, fromState, fromParams) {
     console.dir($scope);
