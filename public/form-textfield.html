@@ -1,6 +1,6 @@
 <div class="form-group has-feedback">
   <label for="{{name}}">{{label}}</label>
-  <input type="{{type}}" class="form-control" interpol-model="{{name}}" ng-model="data[name]" ng-required="true" />
+  <input type="{{type}}" class="form-control" custom-set-name="{{name}}" ng-model="data[name]" ng-required="true" />
   <span class="glyphicon form-control-feedback"
   ng-class="{'glyphicon-ok':form[name].$valid, 'glyphicon-remove':form[name].$invalid}"
   ng-show='(form[name].$dirty || form[name].$touched)'></span>

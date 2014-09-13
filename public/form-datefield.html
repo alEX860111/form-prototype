@@ -1,7 +1,7 @@
 <div class="form-group has-feedback">
   <label for="{{name}}">{{label}}</label>
   <div class='input-group'>
-    <input type="text" class="form-control" interpol-model="{{name}}" ng-model="data[name]" ng-required="true" datepicker-popup="dd-MMMM-yyyy" datepicker-options="dateOptions" is-open="opened" show-button-bar='false' />
+    <input type="text" class="form-control" custom-set-name="{{name}}" ng-model="data[name]" ng-required="true" datepicker-popup="dd-MMMM-yyyy" datepicker-options="dateOptions" is-open="opened" show-button-bar='false' />
     <span class="input-group-btn">
       <button type="button" class="btn btn-default" ng-click="open($event)">&nbsp;<i class="glyphicon glyphicon-calendar"></i>&nbsp;</button>
     </span>
