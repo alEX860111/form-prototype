@@ -1,22 +1,12 @@
 var app = angular.module('directives', ['ui.bootstrap']);
 
-app.directive('interpolForm', function($interpolate) {
-  return {
-    restrict: 'AC',
-    priority: 10000,
-    controller: function($scope, $element, $attrs) {
-      $attrs.$set('name', $interpolate($attrs.interpolForm || $attrs.name)($scope));
-      $element.data('$interpolFormController', null);
-    }
-  };
-});
-
 app.directive('interpolModel', function($interpolate) {
   return {
     priority: 10000,
     restrict: 'AC',
     controller: function($scope, $element, $attrs) {
-      $attrs.$set('name', $interpolate($attrs.interpolModel || $attrs.name)($scope));
+      var interpolFctn = $interpolate($attrs.interpolModel || $attrs.name);
+      $attrs.$set('name', interpolFctn($scope));
       $element.data('$interpolModelController', null);
     }
   };
